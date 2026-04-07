@@ -22,10 +22,6 @@ public class PlayerH : MonoBehaviour
             curentLives--;
             Destroy(other.gameObject);
 
-            if (curentLives <= 0)
-            {
-                GameOver();
-            }
         }
     }
 
