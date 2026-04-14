@@ -198,6 +198,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &610357036
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2138047044}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: dd5874b3b80e7f944b78c979c76b0cee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dd5874b3b80e7f944b78c979c76b0cee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dd5874b3b80e7f944b78c979c76b0cee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dd5874b3b80e7f944b78c979c76b0cee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dd5874b3b80e7f944b78c979c76b0cee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dd5874b3b80e7f944b78c979c76b0cee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dd5874b3b80e7f944b78c979c76b0cee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dd5874b3b80e7f944b78c979c76b0cee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dd5874b3b80e7f944b78c979c76b0cee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dd5874b3b80e7f944b78c979c76b0cee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dd5874b3b80e7f944b78c979c76b0cee, type: 3}
+      propertyPath: m_Name
+      value: glider
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd5874b3b80e7f944b78c979c76b0cee, type: 3}
 --- !u!1 &759213892
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +267,7 @@ GameObject:
   - component: {fileID: 759213894}
   - component: {fileID: 759213893}
   - component: {fileID: 759213896}
+  - component: {fileID: 759213897}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -335,6 +393,21 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &759213897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759213892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e892c15954b2042408804e67de94211f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
+  target: {fileID: 2138047044}
+  offset: {x: 0, y: 5, z: -10}
+  smoothSpeed: 0.125
 --- !u!1 &841156764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1288,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1665966823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dd5874b3b80e7f944b78c979c76b0cee, type: 3}
+  m_PrefabInstance: {fileID: 610357036}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1665966824 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dd5874b3b80e7f944b78c979c76b0cee, type: 3}
+  m_PrefabInstance: {fileID: 610357036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1670389311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,7 +1759,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 17.83
-  jumpForce: 6.27
+  jumpForce: 7
+  turnSpeed: 10
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
+  coyoteTime: 0.15
+  coyoteTimeCounter: 0
+  realGround: 1
+  gliderObject: {fileID: 1665966823}
+  gliderFallSpeed: 1
+  gliderMoveSpeed: 7
+  gliderMaxTime: 5
+  gliderTimeLeft: 0
+  isGliding: 0
   rb: {fileID: 2138047039}
   isGrounded: 1
   coinCount: 0
@@ -1687,7 +1782,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138047037}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f67ba4870d4a2d24894d996be9a8c5ed, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1773,6 +1868,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1665966824}
   - {fileID: 1533249739}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
